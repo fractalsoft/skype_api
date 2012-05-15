@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+# Any idea how to run bash script inside the gem?
+number = 2
+script = <<EOS
+#!/bin/bash
+
+export DISPLAY=:#{number}
+
+if [[ ! -e /tmp/.X#{number}-lock ]]
+# Virtual framebuffer X server
+then Xvfb :#{number} &
+fi
+
+skype &
+EOS
+
+result = `echo "#{script}" | bash -s`
+puts result

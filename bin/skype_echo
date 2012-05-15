@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+
+require 'skype_api'
+
+begin
+  print "Echo is starting... "
+  SkypeApi::Api.instance.attach
+  puts "OK"
+  Thread.list.each { |thread| thread.join }
+rescue Exception => e
+  puts "#{e.message}"
+end

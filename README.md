@@ -1,8 +1,15 @@
 # SkypeApi
 
-TODO: Write a gem description
+SkypeApi is a gem to use Skype API in Ruby projects.
+It's testing and working.
 
 ## Installation
+
+Install Skype, dbus, Xvfb and some fonts:
+
+    sudo aptitude install skype
+    sudo aptitude install dbus xvfb
+    sudo aptitude install xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
 
 Add this line to your application's Gemfile:
 
@@ -18,7 +25,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You have to run Skype at least once, because gem needs config files (authorization and API access).
+
+At first You have to run Skype:
+
+    $ skype_api
+
+Next You can use Skype API. For example run Echo Bot:
+
+    $ skype_echo
 
 ## Contributing
 
